@@ -1,7 +1,7 @@
 // Weapons.js
 import React, { useEffect, useState } from 'react';
-import { fetchValorantData } from '../valorant-api/valorant-unofficial-api';
-import './WeaponsStyle.css';
+import { fetchValorantData } from '../../api/valorant-unofficial-api';
+import '../../style/WeaponsStyle.css';
 
 function Weapons() {
   const [weapons, setWeapons] = useState([]);

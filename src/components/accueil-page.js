@@ -1,6 +1,6 @@
 // Accueil.js
 import React from 'react';
-import './AccueilStyle.css';
+import '../style/AccueilStyle.css';
 
 function Accueil() {
   return (

@@ -6,10 +6,6 @@
     padding: 20px;
 }
 
-.roles-items {
-    list-style: none;
-}
-
 .roles-details {
     text-align: center;
     border: 2px solid #f44336;
@@ -52,6 +48,7 @@
 .agents-buttons-items {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
 }
 

@@ -1,7 +1,7 @@
 // Maps.js
 import React, { useEffect, useState } from 'react';
-import { fetchValorantData } from '../valorant-api/valorant-unofficial-api';
-import './MapsStyle.css';
+import { fetchValorantData } from '../../api/valorant-unofficial-api';
+import '../../style/MapsStyle.css';
 
 function Maps() {
   const [maps, setMaps] = useState([]);

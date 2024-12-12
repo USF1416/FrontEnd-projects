@@ -1,10 +1,10 @@
 // App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Agents from './components/Agents';
-import Maps from './components/Maps';
-import Weapons from './components/Weapons';
-import Accueil from './components/Accueil';
+import Agents from './components/Agents/agents-page';
+import Maps from './components/Maps/maps-page';
+import Weapons from './components/Armes/armes-page';
+import Accueil from './components/accueil-page';
 import './AppStyle.css';
 
 function App() {
