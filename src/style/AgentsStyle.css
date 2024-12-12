@@ -2,22 +2,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 2rem; /* Utilisation d'unités relatives */
+    padding: 2rem;
+    width: 100%; /* S'adapte à la largeur de la page */
+    box-sizing: border-box; /* Inclut les bordures et le padding */
 }
 
 .roles-details {
     text-align: center;
-    border: 2px solid #f44336;
-    border-radius: 8px;
-    padding: 10px;
+    border: 0.2rem solid #f44336;
+    border-radius: 0.8rem;
+    padding: 1rem;
     background-color: #1f2a35;
     color: #ece8e1;
+    width: 90%; /* Ajustement pour responsive */
+    max-width: 40rem; /* Limitation de largeur */
 }
 
 .roles-icons {
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
 }
 
@@ -25,23 +29,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 2rem;
+    width: 100%; /* S'adapte à la largeur */
 }
 
 .agents-rotation-buttons {
     background-color: #1f2a35;
-    border: 2px solid #f44336;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 16px;
+    border: 0.2rem solid #f44336;
+    border-radius: 0.8rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
     color: #ece8e1;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    margin: 5px;
+    margin: 0.5rem;
 }
 
 .agents-rotation-buttons:hover {
-    border: 2px solid #921b13;
+    border: 0.2rem solid #921b13;
     transform: scale(1.1);
 }
 
@@ -49,55 +54,77 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
+    width: 100%;
 }
 
 .agents-selections {
     background-color: #1f2a35;
-    gap: 15px;
-    border-radius: 8px;
-    padding: 5px;
+    gap: 1.5rem;
+    border-radius: 0.8rem;
+    padding: 0.5rem;
     cursor: pointer;
     transition: transform 0.3s;
+    max-width: 40rem;
+    width: 90%; /* Réduction dynamique */
 }
 
 .agents-selections:hover {
-    border: 2px solid #921b13;
+    border: 0.2rem solid #921b13;
 }
 
 .agents-container-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 2rem;
+    width: 100%; /* S'adapte à la largeur */
+    box-sizing: border-box;
 }
 
 .agents-details-container {
     text-align: center;
     background-color: #386ea3;
-    padding: 20px;
-    border-radius: 8px;
-    border: 2px solid #f44336;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    border: 0.2rem solid #f44336;
+    width: 90%;
+    max-width: 40rem;
 }
 
 .agents-image {
-    width: 200px;
-    border-radius: 8px;
+    width: 100%;
+    max-width: 20rem;
+    border-radius: 0.8rem;
 }
 
 .agents-abilities {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 1rem;
     justify-content: center;
+    width: 100%;
 }
 
 .agents-abilities-items {
     text-align: center;
-    width: 50px;
+    width: 5rem;
 }
 
 .agents-abilities-icon {
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
+}
+
+/* Media query pour petits écrans */
+@media (max-width: 768px) {
+    .roles-details, .agents-selections, .agents-details-container {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .agents-rotation-buttons {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
