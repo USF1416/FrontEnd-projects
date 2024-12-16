@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { fetchValorantData } from '../../api/valorant-unofficial-api';
 
+
+
 function AgentsComponent() {
     const [countSlice, setCountSlice] = useState(0);
     const countSliceLimit = 10;
@@ -16,6 +18,27 @@ function AgentsComponent() {
         getAgents();
     }, []); // [] signifie que l'effet s'exécute seulement au montage du composant
 
+    // Composant pour les boutons de rotation des agents
+    const AgentRotationButtonsComponent = () => {
+        var previewDisabled = countSlice < countSliceLimit;
+        var nextDisabled = countSlice >= agents.length - countSliceLimit;
+
+        const agentRotationButtons = (direction) => {
+            if (direction === 'preview' && countSlice >= countSliceLimit) {
+                setCountSlice(countSlice - countSliceLimit);
+            } else if (direction === 'next' && countSlice < agents.length - countSliceLimit) {
+                setCountSlice(countSlice + countSliceLimit);
+            }
+        };
+    
+        return (
+            <div style={{display: 'flex', justifyContent: 'space-between' }}>
+                <button className={`agents-rotation-buttons ${previewDisabled ? 'disabled' : ''}`} id='previewButton' onClick={() => agentRotationButtons('preview')} disabled={previewDisabled}>Preview</button>
+                <button className={`agents-rotation-buttons ${nextDisabled ? 'disabled' : ''}`} id='nextButton' onClick={() => agentRotationButtons('next')} disabled={nextDisabled}>Next</button>
+            </div>
+        );
+    };
+
     return (
         <>
             <article className="agents-buttons-container">
@@ -29,10 +52,7 @@ function AgentsComponent() {
                         </li>
                     ))}
                 </div>
-                <div style={{display: 'flex', justifyContent: 'space-between' }}>
-                    <button className='agents-rotation-buttons' onClick={() => countSlice >= countSliceLimit ? setCountSlice(countSlice - countSliceLimit) : null}>Precedent</button>
-                    <button className='agents-rotation-buttons' onClick={() => countSlice <= (agents.length - countSliceLimit) ? setCountSlice(countSlice + countSliceLimit) : null}>Suivant</button>
-                </div>
+                <AgentRotationButtonsComponent />
             </article>
             <article className="agents-container-2">
                 {selectedAgent && (

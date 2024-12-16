@@ -25,6 +25,7 @@
     border-radius: 50%;
 }
 
+
 .agents-container-1 {
     display: flex;
     flex-wrap: wrap;
@@ -34,6 +35,7 @@
 }
 
 .agents-rotation-buttons {
+    opacity: 1;
     background-color: #1f2a35;
     border: 0.2rem solid #f44336;
     border-radius: 0.8rem;
@@ -43,12 +45,13 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     margin: 0.5rem;
-}
-
-.agents-rotation-buttons:hover {
-    border: 0.2rem solid #921b13;
-    transform: scale(1.1);
-}
+}   .agents-rotation-buttons:hover {
+        border: 0.2rem solid #921b13;
+    }
+    .agents-rotation-buttons.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 
 .agents-buttons-items {
     display: flex;
@@ -67,11 +70,9 @@
     transition: transform 0.3s;
     max-width: 40rem;
     width: 90%; /* Réduction dynamique */
-}
-
-.agents-selections:hover {
-    border: 0.2rem solid #921b13;
-}
+}   .agents-selections:hover {
+        border: 0.2rem solid #921b13;
+    }
 
 .agents-container-2 {
     display: flex;
