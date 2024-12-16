@@ -43,6 +43,7 @@ function AgentsComponent() {
         <>
             <article className="agents-buttons-container">
                 <div className="agents-buttons-items">
+                    {/* bouton pour chaque agent */}
                     {agents.slice(countSlice, countSlice + countSliceLimit).map(agent => (
                         <li key={agent.uuid} style={{ listStyle: 'none'}}>
                             <button className="agents-selections" onClick={() => setSelectedAgent(agent)}>

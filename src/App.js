@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="App" style={{textAlign: 'center'}}>
         <nav>
-          <h1>Bienvenue sur un Valorant Wiki 100% crédible et réalisé par un fan.</h1>
+          <h1>titre site + logo modifié</h1>
           <ul>
             <li><Link to="/">Accueil</Link></li>
             <li><Link to="/Agents">Agents</Link></li>
