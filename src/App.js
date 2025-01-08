@@ -5,7 +5,7 @@ import Agents from './components/Agents/agents-page';
 import Maps from './components/Maps/maps-page';
 import Accueil from './components/accueil-page';
 import './AppStyle.css';
-import Weapons from './components/Armes/armes-page';
+// import Weapons from './components/Armes/armes-page';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="App" style={{textAlign: 'center'}}>
         <nav>
-          <h1>Valorant <img src="/icon Valorant.png" alt="Valorant icon" width='100px' height='100px'/> WikiFan</h1>
+          <h1>Valorant <img src="/img/icon Valorant.png" alt="Valorant icon" width='100px' height='100px'/> WikiFan</h1>
           <ul className="ListSectionLink">
             <button className="SectionLink"><Link to="/">Accueil</Link></button>
             <button className="SectionLink"><Link to="/Agents">Agents</Link></button>

@@ -20,7 +20,7 @@ function RolesComponent() {
   }, []); // [] signifie que l'effet s'exécute seulement au montage du composant
 
   return (
-    <article style={{marginTop:'2.5%',display:'flex',justifyContent:'space-around'}}>
+    <article style={{display:'flex',justifyContent:'space-around'}}>
         {roles.map((role) => (
           <li key={role.uuid}>
             <div class="roles-card">
