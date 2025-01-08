@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
-import { fetchValorantData } from '../../api/valorant-unofficial-api';
-
-
+import { fetchValorantData } from '../../../api/valorant-unofficial-api';
 
 function AgentsComponent() {
-    const [countSlice, setCountSlice] = useState(0);
-    const countSliceLimit = 10;
+    // On crée un état local pour savoir si l'élément est "actif"
     const [agents, setAgents] = useState([]);
     const [selectedAgent, setSelectedAgent] = useState(null)
   
@@ -18,42 +15,23 @@ function AgentsComponent() {
         getAgents();
     }, []); // [] signifie que l'effet s'exécute seulement au montage du composant
 
-    // Composant pour les boutons de rotation des agents
-    const AgentRotationButtonsComponent = () => {
-        var previewDisabled = countSlice < countSliceLimit;
-        var nextDisabled = countSlice >= agents.length - countSliceLimit;
-
-        const agentRotationButtons = (direction) => {
-            if (direction === 'preview' && countSlice >= countSliceLimit) {
-                setCountSlice(countSlice - countSliceLimit);
-            } else if (direction === 'next' && countSlice < agents.length - countSliceLimit) {
-                setCountSlice(countSlice + countSliceLimit);
-            }
-        };
-    
-        return (
-            <div style={{display: 'flex', justifyContent: 'space-between' }}>
-                <button className={`agents-rotation-buttons ${previewDisabled ? 'disabled' : ''}`} id='previewButton' onClick={() => agentRotationButtons('preview')} disabled={previewDisabled}>Preview</button>
-                <button className={`agents-rotation-buttons ${nextDisabled ? 'disabled' : ''}`} id='nextButton' onClick={() => agentRotationButtons('next')} disabled={nextDisabled}>Next</button>
-            </div>
-        );
-    };
+    function isSelected(agent) {
+        return selectedAgent && selectedAgent.uuid === agent.uuid;
+    }
 
     return (
         <>
-            <article className="agents-buttons-container">
-                <div className="agents-buttons-items">
+            <article className="agents-container-1">
+                <div className="agents-buttons-list" style={{display:'flex'}}>
                     {/* bouton pour chaque agent */}
-                    {agents.slice(countSlice, countSlice + countSliceLimit).map(agent => (
+                    {agents.map(agent => (
                         <li key={agent.uuid} style={{ listStyle: 'none'}}>
-                            <button className="agents-selections" onClick={() => setSelectedAgent(agent)}>
-                                <img src={agent.displayIcon} alt={agent.displayName} className="agents-icons"/>
-                                <h3>{agent.displayName}</h3>
+                            <button className={`agents-button ${isSelected(agent) ? 'selected' : ''}`} onClick={() => {setSelectedAgent(agent)}}>
+                                <img className="agents-icons" src={agent.displayIcon} alt={agent.displayName} />
                             </button>
                         </li>
                     ))}
                 </div>
-                <AgentRotationButtonsComponent />
             </article>
             <article className="agents-container-2">
                 {selectedAgent && (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchValorantData } from '../../api/valorant-unofficial-api';
+import { fetchValorantData } from '../../../api/valorant-unofficial-api';
 
 function RolesComponent() {
   const [roles, setRoles] = useState([]);
@@ -20,19 +20,18 @@ function RolesComponent() {
   }, []); // [] signifie que l'effet s'exécute seulement au montage du composant
 
   return (
-    <article>
-        <h2>Roles du jeu</h2>
-        <ul>
-            {roles.map((role) => (
-                <li key={role.uuid} className="roles-items">
-                    <div className="roles-details">
-                        <img src={role.displayIcon} alt={role.displayName} className="roles-icons" style={{backgroundColor: '#ddd'}}/>
-                        <h3>{role.displayName}</h3>
-                        <p>{role.description}</p>
-                    </div>
-                </li>
-            ))}
-        </ul>
+    <article style={{marginTop:'2.5%',display:'flex',justifyContent:'space-around'}}>
+        {roles.map((role) => (
+          <li key={role.uuid}>
+            <div class="roles-card">
+              <img className="roles-icon" src={role.displayIcon} alt={role.displayName}/>
+              <div class="content-card">
+                <h2 style={{fontFamily:'fantasy', fontWeight:'1'}}>{role.displayName}</h2>
+                <p class="description-card">{role.description}</p>
+              </div>
+            </div>
+          </li>
+        ))}
     </article>
   );
 }

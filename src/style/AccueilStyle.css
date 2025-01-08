@@ -1,0 +1,33 @@
+.game-presentation, .riot-presentation {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #1f2a35;
+    color: #ece8e1;
+    border-radius: 8px;
+    border: 2px solid #f44336;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.game-presentation h2, .riot-presentation h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f44336;
+}
+
+.presentation-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.game-presentation p, .riot-presentation p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 10px 0;
+}

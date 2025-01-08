@@ -1,0 +1,101 @@
+/* agent-page.js */
+section {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #dd2626;
+    margin: 10px;
+}
+
+/* agents-component.js */
+.agents-buttons-list {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.agents-button {
+    margin: 5px;
+    position: relative;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.8), /* Blanc opaque en haut */
+        rgba(255, 255, 255, 0.2) /* Transparent en bas */
+    );
+    border: 5px solid #d4d3d3;
+}
+
+.agents-button:hover {
+    background: linear-gradient(
+        rgba(51, 255, 204, 0.6),
+        rgba(51, 255, 204, 0)
+    );
+    border: 5px solid #33ffcc;
+}
+
+.agents-button.selected {
+    margin: 5px;
+    position: relative;
+    background: linear-gradient(
+        rgba(255, 204, 102, 0.8),
+        rgba(255, 204, 102, 0.2)
+    );
+    border: 5px solid #FFCC66;
+}
+
+.agents-button.selected:after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    border-bottom: 100px solid transparent;
+    border-left: 100px solid #FFCC66;
+}
+
+/* roles-component.js */
+.roles-card {
+    color: #777;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #d4d3d3;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.roles-card .roles-icon {
+    width: 100px;
+    fill: #333;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.roles-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.content-card {
+    position: absolute;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #d4d3d3;
+    transform: rotateX(180deg);
+    transform-origin: bottom;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.roles-card:hover .content-card {
+    transform: rotateX(0deg);
+}
+
+.roles-card:hover .roles-icon {
+    scale: 0;
+}
+
+.description-card {
+    line-height: 1.4;
+}

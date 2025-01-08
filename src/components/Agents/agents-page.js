@@ -1,5 +1,5 @@
-import RolesComponent from './roles-component';
-import AgentsComponent from './agents-component';
+import RolesComponent from './roles-section/roles-component';
+import AgentsComponent from './agents-section/agents-component';
 import '../../style/AgentsStyle.css';
 
 
@@ -10,7 +10,7 @@ function Agents() {
         <RolesComponent />
       </section>
       
-      <section className="agents-container-1">
+      <section className="agents-container">
         <AgentsComponent />
       </section>
     </>
