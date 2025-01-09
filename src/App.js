@@ -13,12 +13,12 @@ function App() {
     <Router>
       <div className="App" style={{textAlign: 'center'}}>
         <nav>
-          <h1>Valorant <img src="/img/icon Valorant.png" alt="Valorant icon" width='100px' height='100px'/> WikiFan</h1>
+          <h1>Valorant <img src="/img/icon Valorant.png" alt="Valorant icon" width='100rem'/> WikiFan</h1>
           <ul className="ListSectionLink">
             <button className="SectionLink"><Link to="/">Accueil</Link></button>
             <button className="SectionLink"><Link to="/Agents">Agents</Link></button>
             <button className="SectionLink"><Link to="/Maps">Maps</Link></button>
-            {/*<button><Link to="/Weapons">Weapons</Link></button>*/}
+            {/*<button className="SectionLink"><Link to="/Weapons">Weapons</Link></button>*/}
           </ul>
         </nav>
         <main>

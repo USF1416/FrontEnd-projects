@@ -22,12 +22,12 @@ function AgentsComponent() {
     return (
         <>
             <article className="agents-container-1">
-                <div className="agents-buttons-list" style={{display:'flex'}}>
+                <div className="agents-buttons-list">
                     {/* bouton pour chaque agent */}
                     {agents.map(agent => (
                         <li key={agent.uuid} style={{ listStyle: 'none'}}>
                             <button className={`agents-button ${isSelected(agent) ? 'selected' : ''}`} onClick={() => {setSelectedAgent(agent)}}>
-                                <img className="agents-icons" src={agent.displayIcon} alt={agent.displayName} />
+                                <img className="agents-icons" src={agent.displayIcon} alt={agent.displayName} style={{width:'115%'}}/>
                             </button>
                         </li>
                     ))}
@@ -37,14 +37,14 @@ function AgentsComponent() {
                 {selectedAgent && (
                     <div className="agents-details-container">
                         <img src={selectedAgent.fullPortrait} alt={selectedAgent.displayName} className="agents-image"/>
-                        <h2>{selectedAgent.displayName}</h2>
-                        <p>{selectedAgent.description}</p>
+                        <h2 className="agents-name">{selectedAgent.displayName}</h2>
+                        <p className="agents-description">{selectedAgent.description}</p>
                         {selectedAgent && (
                             <div className="agents-abilities">
-                                {selectedAgent.abilities.map((ability, index) => (
-                                    <div key={index} className="agents-abilities-items">
-                                        <img src={ability.displayIcon} alt={ability.displayName} className="agents-abilities-icon" style={{backgroundColor: '#ddd'}}/>
-                                    </div>
+                                {selectedAgent.abilities.map((ability) => (
+                                    <button className="agents-abilities-icon">
+                                        <img src={ability.displayIcon} alt={ability.displayName} style={{width:'100%'}}/>
+                                    </button>
                                 ))}
                             </div>
                         )}

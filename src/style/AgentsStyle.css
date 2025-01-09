@@ -1,87 +1,145 @@
-/* agent-page.js */
-section {
-    border: 1px solid rgb(255, 255, 255);
-    margin: 10px;
+article, section {
+    border: 0.1rem solid red;
+    margin: 1rem;
 }
 
 /* agents-component.js */
-.agents-buttons-list {
-    width: 1000px;
+.agents-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+}
+
+.agents-buttons-list {
+    padding-right:0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap: 0.5rem;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory; /* Active le scroll snapping dans l’axe vertical (y) */
+    scrollbar-gutter: stable;
+    max-height: 52rem;
+}
+.agents-buttons-list::-webkit-scrollbar { /* La barre de défilement elle-même */
+    width:1.5rem; /* largeur de la scrollbar */
+}
+.agents-buttons-list::-webkit-scrollbar-track { /* La « piste » de la scrollbar (le rail) */
+    background: transparent; /* couleur de fond de la piste */
+}
+.agents-buttons-list::-webkit-scrollbar-thumb { /* Le curseur de défilement (la partie qu'on déplace) */
+    background-color: #d4d3d3; /* couleur du curseur */
+    border-radius: 0.25rem; /* angles arrondis */
+    border: 0.25rem solid #777; /* exemple de bordure */
 }
 
 .agents-button {
-    width:auto;
-    height:auto;
-    margin: 5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:10rem;
+    height:10rem; /* Forçons chaque “section” à faire 10rem de haut */
+    scroll-snap-align: start; /* Position du “snap”, on accroche le début (start) de la section */
+    overflow: hidden;
     position: relative;
     background: linear-gradient(
-        rgba(255, 255, 255, 0.8), /* Blanc opaque en haut */
-        rgba(255, 255, 255, 0.2) /* Transparent en bas */
+        rgba(255, 255, 255, 0.4), /* Blanc opaque en haut */
+        rgba(255, 255, 255, 0) /* Transparent en bas */
     );
-    border: 5px solid #d4d3d3;
+    border: 0.4rem solid #d4d3d3;
 }
-
 .agents-button:hover {
     background: linear-gradient(
         rgba(51, 255, 204, 0.8),
         rgba(51, 255, 204, 0.2)
     );
-    border: 5px solid #33ffcc;
+    border: 0.4rem solid #33ffcc;
+    
 }
-
 .agents-button.selected {
-    margin: 5px;
     position: relative;
     background: linear-gradient(
         rgba(255, 204, 102, 0.8),
         rgba(255, 204, 102, 0.2)
     );
-    border: 5px solid #FFCC66;
+    border: 0.4rem solid #FFCC66;
 }
-
 .agents-button.selected:after {
     content: "";
     position: absolute;
-    left: -4px;
-    top: -4px;
-    border-bottom: 100px solid transparent;
-    border-left: 100px solid #FFCC66;
+    left: 0rem;
+    top: 0rem;
+    border-bottom: 3rem solid transparent;
+    border-left: 3rem solid #FFCC66;
+}
+
+.agents-image {
+    height:52rem;
+    border: 0.1rem solid blue;
+}
+
+.agents-name {
+    font-size: 3rem;
+    font-family: fantasy;
+    font-weight: 1;
+}
+
+.agents-description {
+    font-size: 1.5rem;
+}
+
+.agents-abilities {
+    width:20.5rem;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 0.5rem;
+    border: 1px solid green;
+    margin: 10px;
+}
+
+.agents-abilities-icon {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 10rem;
+    background: #ddd;
+    border-radius: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+.agents-abilities-icon:hover {
+    cursor: pointer;
+    background: #a0a0a0;
 }
 
 /* roles-component.js */
 .roles-card {
+    font-size: 1.5rem;
     color: #777;
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 30rem;
+    height: 20rem;
     background-color: #d4d3d3;
-    border-radius: 10px;
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    perspective: 1000px;
-    box-shadow: 0 0 0 5px #ffffff80;
+    box-shadow: 0 0 0 0.5rem #ffffff80;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .roles-card .roles-icon {
-    width: 100px;
-    fill: #333;
+    width: 10rem;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .roles-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    box-shadow: 0.0 0.8rem 1.6rem rgba(255, 255, 255, 0.2);
 }
 
 .content-card {
     position: absolute;
-    padding: 20px;
+    padding: 2rem;
     box-sizing: border-box;
     background-color: #d4d3d3;
     transform: rotateX(180deg);
@@ -91,12 +149,4 @@ section {
 
 .roles-card:hover .content-card {
     transform: rotateX(0deg);
-}
-
-.roles-card:hover .roles-icon {
-    scale: 0;
-}
-
-.description-card {
-    line-height: 1.4;
 }
