@@ -5,12 +5,12 @@ import '../../style/AgentsStyle.css';
 
 function Agents() {
   return (
-    <div  style={{backgroundImage:'url("/img/valorant-conceptart-haven.png")',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}>
+    <div>
       <section className="roles-container">
         <RolesComponent />
       </section>
       
-      <section className="agents-container">
+      <section className="agents-container" style={{backgroundImage:'url("/img/valorant-conceptart-haven.png")',backgroundSize:'',backgroundRepeat:'no-repeat'}}>
         <AgentsComponent />
       </section>
     </div>
