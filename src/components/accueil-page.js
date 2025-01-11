@@ -8,8 +8,8 @@ function Accueil() {
       <section className="game-presentation">
         <h2>Présentation de Valorant</h2>
         <img 
-          src="https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S1_2560x1440-6608fb6c4c56c07b9a7caa34c6e6ee37?resize=1&w=480&h=270&quality=medium" 
-          alt="Valorant Logo" 
+          src="/img/valorant-agent-key-art-ep7.png" 
+          alt="Valorant agent key art ep7" 
           className="presentation-image"
         />
         <p>

@@ -6,6 +6,9 @@ article, section {
 /* agents-component.js */
 .agents-container {
     display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
 }
 
 .agents-buttons-list {

@@ -38,16 +38,16 @@ ul, ol, li {
 /* Boutons stylisés */
 .SectionLink, .SectionLink::after {
     font-family: fantasy;
-     padding: 1.6rem 2rem;
-     font-size: 1.8rem;
-     background: linear-gradient(45deg, transparent 5%, #f44336 5%);
-     border: 0rem;
-     color: #fff;
-     letter-spacing: 0.3rem;
-     line-height: 1;
-     box-shadow: 0.6rem 0.0rem 0.0rem #ba3a46;
-     outline: transparent;
-     position: relative;
+    padding: 1.6rem 2rem;
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, transparent 5%, #f44336 5%);
+    border: 0rem;
+    color: #fff;
+    letter-spacing: 0.3rem;
+    line-height: 1;
+    box-shadow: 0.6rem 0.0rem 0.0rem #ba3a46;
+    outline: transparent;
+    position: relative;
 }
 .SectionLink::after {
     --slice-0: inset(50% 50% 50% 50%);
@@ -71,7 +71,6 @@ ul, ol, li {
     animation: 1s glitch;
     animation-timing-function: steps(2, end);
 }
-
 @keyframes glitch {
     0% {
      clip-path: var(--slice-1);
