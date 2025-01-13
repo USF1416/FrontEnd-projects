@@ -33,7 +33,7 @@ function AgentsComponent() {
             <article className="agents-container-1">
                 <div className="filters-list">
                     <button className='filters-button'>
-                        <img src='/img/filter-icon.png' alt='h' style={{width:'75%'}}/>
+                        <img src='/img/filter-icon.png' alt='h' style={{width:'111%'}}/>
                     </button>
                     {roles.map((role) => (
                     <li key={role.uuid}>

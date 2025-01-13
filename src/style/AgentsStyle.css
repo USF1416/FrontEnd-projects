@@ -25,15 +25,13 @@ article, section {
     justify-content: center;
     width:6rem;
     height: 6rem;
-    background: linear-gradient(
-        rgba(167, 167, 167, 0.5)
-    );
+    background: rgba(167, 167, 167, 0.5);
     border: 0.3rem solid #d4d3d3;
 }
 
 /* agents-component.js */
 .agents-buttons-list  {
-    padding-right:0.5rem;
+    padding-right:0.75rem;
     display: grid;
     grid-template-columns: repeat(4,auto);
     gap: 0.75rem;
