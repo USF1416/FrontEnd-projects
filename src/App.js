@@ -15,10 +15,10 @@ function App() {
         <nav>
           <h1>Valorant <img src="/img/icon Valorant.png" alt="Valorant icon" width='100rem'/> WikiFan</h1>
           <ul className="ListSectionLink">
-            <button className="SectionLink"><Link to="/">Accueil</Link></button>
-            <button className="SectionLink"><Link to="/Agents">Agents</Link></button>
-            <button className="SectionLink"><Link to="/Maps">Maps</Link></button>
-            {/*<button className="SectionLink"><Link to="/Weapons">Weapons</Link></button>*/}
+            <button className="SectionLink"><Link to="/"><span class="SectionLink-span">Accueil</span></Link></button>
+            <button className="SectionLink"><Link to="/Agents"><span class="SectionLink-span">Agents</span></Link></button>
+            <button className="SectionLink"><Link to="/Maps"><span class="SectionLink-span">Maps</span></Link></button>
+            {/*<button className="SectionLink"><Link to="/Weapons"><span class="SectionLink-span">Armes</span></Link></button>*/}
           </ul>
         </nav>
         <main>

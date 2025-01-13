@@ -20,15 +20,15 @@ function RolesComponent() {
   }, []); // [] signifie que l'effet s'exécute seulement au montage du composant
 
   return (
-    <article style={{display:'flex',justifyContent:'space-around'}}>
+    <article style={{display:'flex',justifyContent:'space-around',height:'37rem'}}>
         {roles.map((role) => (
           <li key={role.uuid}>
             <div class="roles-card">
-              <img className="roles-icon" src={role.displayIcon} alt={role.displayName}/>
-              <div class="content-card">
-                <h2 style={{fontFamily:'fantasy', fontWeight:'1'}}>{role.displayName}</h2>
-                <p class="description-card">{role.description}</p>
+              <div className="roles-icon">
+                <img src={role.displayIcon} alt={role.displayName}/>
               </div>
+              <h2 className='roles-title' style={{fontFamily:'fantasy', fontWeight:'1'}}>{role.displayName}</h2>
+              <p class="description-card">{role.description}</p>
             </div>
           </li>
         ))}

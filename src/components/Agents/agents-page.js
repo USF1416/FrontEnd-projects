@@ -10,7 +10,7 @@ function Agents() {
         <RolesComponent />
       </section>
       
-      <section className="agents-container" style={{backgroundImage:'url("/img/valorant-conceptart-ep2.png")',backgroundSize:'',backgroundRepeat:'no-repeat'}}>
+      <section className="agents-container" style={{backgroundImage:'url("/img/valorant-conceptart-contract-screen.png")',backgroundSize:'',backgroundRepeat:'no-repeat'}}>
         <AgentsComponent />
       </section>
     </div>
